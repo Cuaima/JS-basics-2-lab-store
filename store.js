@@ -1,4 +1,8 @@
 // TODO:
+
+// Declare `shoppingCart`, something where you will be storing all products that the user buys.
+var shoppingCart = []
+// Declare `products`, the different that you will be selling under each of the departments.
 // var products = []
 var products = [
   { referenceNumber: 1231, name: "Super Lite Mat", price: 10 },
@@ -10,13 +14,14 @@ var products = [
   { referenceNumber: 1237, name: "Bring Yoga To Life", price: 30 },
   { referenceNumber: 1238, name: "Light On Yoga", price: 10 }
 ]
-var shoppingCart = []
-// Declare `shoppingCart`, something where you will be storing all products that the user buys.
-// Declare `products`, the different that you will be selling under each of the departments.
 
 var shopFromStore =  function () {
   var refNr = askUserForReferenceNumber();
   // Add the product with the matching referenceNumber to the shoppingCart
+  shoppingCart.push(refNr);
+  // test
+  // console.log(shoppingCart);
+
 
   displayProductsFromShoppingCart();
 
@@ -31,12 +36,16 @@ var shopFromStore =  function () {
 var displayProductsFromShoppingCart = function() {
   // iterate over the shoppingCart and display the contents
 
+
   // use the printProductsOnScreen function for inspiration
 };
 
 var askUserForReferenceNumber = function() {
   // Use window.prompt to ask the user a question and capture their response,
   // then, return the response from this function back to our caller
+  //test
+  // console.log('this runs');
+  return prompt('Please, fill in the reference number of the item you would like to buy');
 };
 
 //
