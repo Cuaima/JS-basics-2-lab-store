@@ -18,9 +18,36 @@ var products = [
 var shopFromStore =  function () {
   var refNr = askUserForReferenceNumber();
   // Add the product with the matching referenceNumber to the shoppingCart
-  shoppingCart.push(refNr);
+  products.forEach(function(product){
+    // check if product refNR is something?
+    // console.log(typeof refNr);
+    // console.log(refNr);
+
+    // 1.access product DONE
+    // console.log(product);
+    // 2. access product refference referenceNumber DONE
+    // console.log(product.referenceNumber)
+    // console.log(typeof product.referenceNumber);
+    // 3. compare with user input
+    if (parseInt(refNr) === product.referenceNumber){
+
+      // console.log('match!'); //posts 'match!' if the number given matches an item in the product list
+
+    // 4. return the product we want DONE
+      var productSelected = product;
+      // console.log(productSelected);
+      shoppingCart.push(productSelected);
+      // console.log(shoppingCart);
+
+    // 5. figure out how to add to shopping cart
+    }
+    // console.log(productSelected);
+    // console.log(shoppingCart);
+
+  })
+
   // test
-  // console.log(shoppingCart);
+  console.log(shoppingCart);
 
 
   displayProductsFromShoppingCart();
@@ -45,7 +72,10 @@ var askUserForReferenceNumber = function() {
   // then, return the response from this function back to our caller
   //test
   // console.log('this runs');
-  return prompt('Please, fill in the reference number of the item you would like to buy');
+  // return prompt('Please, fill in the reference number of the item you would like to buy');
+  // this works
+  var answer = window.prompt('WHAT!');
+  return answer;
 };
 
 //
